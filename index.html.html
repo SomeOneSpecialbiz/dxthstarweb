@@ -144,15 +144,33 @@
             background: #ffffff;
             border: 1px solid #000000;
             border-radius: 8px;
-            overflow: hidden;
+            overflow: visible;
             text-align: center;
             padding-bottom: 15px;
         }
+        
+       .product-images {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
 
-        .product-card img {
+        .product-images::-webkit-scrollbar {
+            display: none;
+        }
+        .product-images {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .product-images img {
+            flex: 0 0 100%;
             width: 100%;
-            height: 300px;
-            object-fit: contain;
+            min-width: 100%; /* Add this line */
+            height: 350px;
+            object-fit: cover;
+            scroll-snap-align: start;
         }
 
         .product-card h3 {
@@ -290,6 +308,12 @@
         <!-- Product Grid -->
         <div class="product-grid">
             <div class="product-card">
+                <div class="product-images">
+                    <img src="die-to-shine-zipup-white-1.jpg" alt="die-to-shine-zipup-black">
+                    <img src="die-to-shine-zipup-white-2.jpg" alt="die-to-shine-zipup-grey">
+                    <img src="die-to-shine-zipup-white-3.jpg" alt="die-to-shine-zipup-grey">
+                    <img src="die-to-shine-zipup-white-4.jpg" alt="die-to-shine-zipup-grey">
+                </div>
                 <img src="die-to-shine-zipup-black.png" alt="die-to-shine-zipup-black">
                 <h3>Die To Shine Zip Up</h3>
                 <h4> colour: black</h4>
